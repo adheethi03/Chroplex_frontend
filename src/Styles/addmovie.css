@@ -1,0 +1,108 @@
+.add-movie-form
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+
+.inp
+{  
+  background-color: black;
+   margin-left: 4rem;
+   width: 25rem;
+   height:7rem; 
+   margin-top: 2rem;
+   border-radius: 2rem;
+   border:2px solid #F5C518;
+   color: #F5C518;
+   font-family: 'Orbitron',sans-serif;
+   text-align: center;
+   font-size: large;
+}
+.inp::placeholder
+{
+    text-align: center;
+    color:  #F5C518;
+    font-weight: bold;
+    font-family:'Orbitron',sans-serif;
+    font-size: large;
+}
+.inp2
+{
+     background-color: black;
+   margin-left: 4rem;
+   width: 25rem;
+   height:7rem; 
+   margin-top: 2rem;
+   border-radius: 2rem;
+   border:2px solid #F5C518;
+   padding-top: 4rem;
+   color: #F5C518;
+   font-family: 'Orbitron',sans-serif;
+   text-align: center;
+   font-size: large;
+}
+.inp2::placeholder
+{
+    text-align: center;
+    color:  #F5C518;
+    font-weight: bold;
+    font-family:'Orbitron',sans-serif;
+    font-size: large;
+
+}
+.inp4
+{
+    background-color: black;
+   margin-left: 4rem;
+   width: 25rem;
+   height:7rem; 
+   margin-top: 2rem;
+   border-radius: 2rem;
+   border:2px solid #F5C518;
+   color: #F5C518;
+   font-family: 'Orbitron',sans-serif;
+   text-align: center;
+   font-size: large;
+   margin-bottom: 5rem;
+   padding-top: 5rem;
+}
+.inp4::placeholder
+{
+    text-align: center;
+    color:  #F5C518;
+    font-weight: bold;
+    font-family:'Orbitron',sans-serif;
+    font-size: large;
+
+}
+input[type="file"]::file-selector-button
+{
+    background-color: black;
+    color: #F5C518;
+    font-family: 'Orbitron',sans-serif;
+    border: none;
+    border-radius: 1rem;
+    padding-top:2rem ;
+    
+}
+.upload-movie
+{
+    width: 15rem;
+    height: 4rem;
+    border-radius: 2rem;
+    border-color: #F5C518;
+    color: #F5C518;
+    font-family: 'Orbitron',sans-serif;
+    font-weight: bold;
+    background-color: black;
+    font-size: large;
+    margin-left: 40%;
+
+}
+.upload-movie:hover
+{
+    background-color: #ffd249;
+    color: black;
+}

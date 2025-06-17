@@ -1,0 +1,147 @@
+body{
+    background-color: black;
+
+    
+}
+.subheading
+{
+    color: #a38014;
+    font-size:2rem;
+    margin-left: 5rem;
+    text-align: center;
+}
+.heading-title
+{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    margin-left: 5rem;
+     color:  #a38014;
+   font-family: 'Orbitron',sans-serif;
+   font-size: 1.5rem;
+}
+.movie-grid
+{
+   padding:2rem ;
+   min-height: 100vh;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 2rem;
+
+}
+
+
+.movie-grid p
+{
+    color: #F5C518;
+    font-size: 1rem;
+    text-align: left;
+    margin-left: 3rem;
+}
+.movie-grid .movie-card
+{
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+}
+.movie-grid .movie_poster
+{
+    width: 20rem;
+    height:30rem;
+    margin-left: 3rem;
+}
+.movie_title
+{
+    color: #F5C518;
+    margin-left: 3rem;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.user-icon
+{
+    color: #F5C518;
+}
+.plus-icon
+{
+    color: #F5C518;
+}
+.to-search
+{
+    background-color:#F5C518;
+    border: none;
+    height: 2rem;
+    border-radius: 2rem;
+    width:6rem;
+    text-align: center;
+   
+
+   
+} 
+ .to-search::placeholder
+{
+    color: black;
+    font-size:medium;
+    
+} 
+.nav-btns
+{
+    background-color: black;
+    border: 1px solid #F5C518;
+    height: 2rem;
+    color: #F5C518;
+    border-radius: 2rem;
+    margin-left: 1rem;
+}
+.nav-btns:hover
+{
+    background-color: #f1c02b;
+    color: black;
+}
+.plus-icon:hover
+{
+    color: black;
+}
+.user-icon:hover
+{
+    color: black;
+}
+.navbar
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.trash-ico
+{
+    margin-left: 4rem; 
+    padding: 0.5rem;
+    color: #f1c02b;
+   
+}
+.trash-btn
+{
+    background-color: rgb(0, 0, 0);
+    width: 1rem;
+    border: none;
+}
+.search-icon
+{
+    color: #000000;
+    width: 1rem;
+    height: 1rem;
+   
+}
+.search-btn
+{
+  background-color:#F5C518;
+    border: none;
+    height: 2.5rem;
+    border-radius: 2rem;
+    width: 8rem;
+    text-align: center;
+}
+.search-icon:hover
+{
+    color: #ff0000;
+}

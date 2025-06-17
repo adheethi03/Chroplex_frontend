@@ -1,0 +1,85 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kumar+One&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&family=Tiny5&display=swap');
+.form-display
+{
+    display: flex;
+    flex-direction: column;
+}
+.input-display
+{
+    margin: 0.5rem;
+    width: 21rem;
+    height: 3rem;
+    border-radius: 1rem;
+    border-color: #F5C518 ;
+    text-align: center;
+
+}
+p
+{
+    color:  #a38014;
+    font-size: 2rem;
+    text-align: center;
+    font-family:'Orbitron' ;
+    font-weight: 200;
+}
+.input-display::placeholder
+{
+    color: black;
+    opacity: 0.7;
+    text-align: center;
+}
+.drop-down
+{
+     margin: 0.5rem;
+    width: 21rem;
+    height: 3rem;
+    border-radius: 1rem;
+    border-color: #F5C518 ;
+    text-align: center;
+    
+}
+option:hover
+{
+    background-color:#F5C518 !important;
+}
+.img-file
+{
+   margin: 0.5rem;
+    width: 21rem;
+    height: 3rem;
+    
+    
+}
+.img-file::placeholder
+{
+    color: #a38014;
+}
+.dp {
+    border: 1px solid #F5C518;
+    width: 20rem;
+    height: 6rem;
+    margin-left: 1rem;
+    border-radius: 1rem;
+    display: flex;           
+    align-items: center;    
+    justify-content: center; 
+    position: relative;     
+}
+
+.labeldp {
+    color: #F5C518;
+    
+    margin: 0; 
+    text-align: center; 
+}
+
+.img-file {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}

@@ -1,0 +1,62 @@
+.user-data
+{
+    color: white;
+    border: 1px solid #a38014;
+    align-items: center;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+ 
+}
+.username
+{
+    color: #F5C518;
+    margin-left: 3rem;
+
+    font-size: 2.5rem;
+}
+.userdata
+{
+    font-size: 1rem;
+    text-align: left;
+    margin-left: 4rem;
+    
+}
+.trash-icon
+{
+    background-color:#F5C518;
+    color: black;
+    border:none;
+    width:3em;
+    height: 3rem;
+    border-radius: 50%;
+    margin-left: 50rem;
+    
+   
+}
+.trash-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.info {
+  color: #F5C518;
+  font-family: 'Orbitron';
+  background-color: black;
+ text-align: end;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+.trash-icon-container:hover .info {
+  visibility: visible;
+  opacity: 1;
+}
