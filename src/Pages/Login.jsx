@@ -25,11 +25,11 @@ const Login = () => {
         } )
         
        
-        console.log(res)
+      
       localStorage.setItem("token",res.data.token)
       localStorage.setItem("userid",JSON.stringify(res.data.user.id))
       localStorage.setItem("userimg",JSON.stringify(res.data.user.image))
-      console.log(res.data.user.id)
+      
 
       // alert("Login Successfull")
       if (formData.role=="admin")

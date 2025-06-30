@@ -8,7 +8,7 @@ const Admin = () => {
   const navigate = useNavigate();
   const [dmovies, setMovies] = useState([]);
   const [error, setError] = useState(null);
-  // const [searchname,setsearch]=useState("")
+  
   useEffect(() => {
     const fetchmovies = async () => {
       try {
@@ -16,7 +16,7 @@ const Admin = () => {
         
         const moviesArray = res.data.movies;
 
-        //duplicate
+        
         const uniqueTitles = new Set();
         const uniqueMovies = moviesArray.filter(movie => {
           if (uniqueTitles.has(movie.title)) return false;

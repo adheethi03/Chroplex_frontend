@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import '../Styles/Login.css'
+import { Navigate, useNavigate } from 'react-router-dom'
 const Signup = () => {
   const[formdata,setFormData]=useState({
     name:"",
@@ -14,7 +15,7 @@ const Signup = () => {
   const handleImageChange = (e) => {
     setImageFile(e.target.files[0]);
   };
-
+  const navigate=useNavigate()
   const handlechange=(e)=>
   {
     setFormData({...formdata,[e.target.name]:e.target.value})
@@ -106,7 +107,7 @@ const Signup = () => {
    
 
         {error && <p className='error'>{error}</p>}
-        <button type='submit' className='btn'>Sign up</button>
+        <button type='submit' className='btn' onClick={()=>navigate("/user/logout")}>Sign up</button>
       </form>
     </div>
   )

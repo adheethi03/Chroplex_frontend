@@ -3,13 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { Carousel } from 'react-bootstrap';
 import '../Styles/userhome.css';
 import axios from 'axios';
-import { useParams } from "react-router-dom";
-
+import { FaSignOutAlt, FaSearch } from 'react-icons/fa';
+import { FaInstagram,FaLinkedin } from 'react-icons/fa';
 function User() {
   const [movies, setMovies] = useState([]);
   const [groupedMovies, setGroupedMovies] = useState({});
   const [error, setError] = useState("");
   const [darkMode, setDarkMode] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const navigate = useNavigate();
 
@@ -22,8 +23,21 @@ function User() {
     setDarkMode(prevMode => !prevMode);
   };
 
+  const handleSearch = () => {
+    const foundMovie = movies.find(
+      (movie) => movie.title.toLowerCase().includes(searchTerm.trim().toLowerCase())
+    );
+
+    if (foundMovie) {
+      const encodedTitle = encodeURIComponent(foundMovie.title);
+      navigate(`/movies/${encodedTitle}`);
+    } else {
+      alert("Movie not found!");
+    }
+  };
+
   useEffect(() => {
-    // Load Bootstrap CSS
+   
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';
@@ -38,7 +52,6 @@ function User() {
     const fetchMovies = async () => {
       try {
         const res = await axios.get("http://localhost:3000/adm/admin/movies/show");
-
         const moviesArray = res.data.movies;
 
         const uniqueTitles = new Set();
@@ -76,8 +89,33 @@ function User() {
         </button>
       </div>
 
-      <h1 className='heading-title'>CHROPLEX</h1>
-      <h2 className="subheading">WELCOME USER</h2>
+      <div className="navb">
+        <FaSignOutAlt
+          style={{ color: 'gold', fontSize: '24px', cursor: 'pointer' }}
+          onClick={() => navigate("/user/logout")}
+        />
+        <h1 className='heading-title'>CHROPLEX</h1>
+        <h2 className="subheading">WELCOME USER</h2>
+
+        <form
+          className='search-form'
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSearch();
+          }}
+        >
+          <input
+            type="text"
+            placeholder="Search"
+            className="to-search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button className='search-btn' type='submit'>
+            <FaSearch className='search-icon' />
+          </button>
+        </form>
+      </div>
 
       <Carousel className="imgs">
         {[
@@ -90,7 +128,7 @@ function User() {
           "https://www.gethucinema.com/wp-content/uploads/2017/10/Mersal-Movie-HD-Posters-2.jpg",
           "https://images.indianexpress.com/2023/12/goat-vijay-1600.jpeg?w=640"
         ].map((src, index) => (
-          <Carousel.Item key={index} interval={3000}>
+          <Carousel.Item key={index} interval={1500}>
             <img className="d-block w-100" src={src} alt={`Slide ${index + 1}`} />
           </Carousel.Item>
         ))}
@@ -113,7 +151,6 @@ function User() {
                     className='movie_poster'
                   />
                   <h3 className='movie_title'>{movie.title}</h3>
-                  <p className='movie_genre'>{movie.genre}</p>
                   <p className='movie_desc'>{movie.description?.substring(0, 100)}...</p>
                 </div>
               ))}
@@ -121,7 +158,15 @@ function User() {
           </div>
         ))}
       </div>
-    </div>
+       {/* footer */}
+            <div className='footer'>
+              <h2 className='footer-head'>CONTACT US</h2>
+            <div className='links'>
+              <a href="https://www.instagram.com/adheethi_?igsh=MThoc2pjaGcyYXN5cA=="><FaInstagram/></a>
+            <a href="https://www.linkedin.com/in/adheethiks?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FaLinkedin/></a>
+            </div>
+            </div>
+          </div>
   );
 }
 

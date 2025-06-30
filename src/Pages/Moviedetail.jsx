@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import "../Styles/moviedetails.css";
 import { FaHeart, FaPlay, FaPencilAlt } from 'react-icons/fa';
+import { FaSignOutAlt } from 'react-icons/fa'
+import { FaInstagram,FaLinkedin } from 'react-icons/fa';
 
 const Moviedetail = () => {
   const { title } = useParams();
@@ -11,7 +13,7 @@ const Moviedetail = () => {
   const [review, setReview] = useState({ Comment: '', rating: '' });
   const [success, setSuccess] = useState('');
   const [darkMode, setDarkMode] = useState(false);
-
+  const navigate=useNavigate()
   const toggleDarkMode = () => {
     setDarkMode(prevMode => !prevMode);
   };
@@ -67,14 +69,16 @@ const Moviedetail = () => {
   }
 
   return (
+
     <div className={`container-fluid ${darkMode ? 'dark' : 'light'}`} style={{ padding: 30 }}>
       <button className="toggle-btn" onClick={toggleDarkMode}>
         {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
       </button>
-
+      <FaSignOutAlt  className="logout" onClick={()=>navigate("/user/logout")}/>
       {movies ? (
         <>
           <h1 className="heading-title">CHROPLEX</h1>
+          
           <div className='p-b-image'>
             <img className="movie-poster-image" src={movies.movie_image} alt={movies.title} />
             <div className="movie-banner-container">
@@ -85,16 +89,19 @@ const Moviedetail = () => {
                   height: "330px"
                 }}
               >
-                <button className="watch-trailer-btn" onClick={() => {
-                  if (movies.trailer_link) {
-                    window.open(movies.trailer_link, "_blank");
-                  } else {
-                    alert("Trailer not available");
-                  }
-                }}>
-                  <FaPlay className="play-icon" />
-                  Watch Trailer
-                </button>
+               <button
+                          className="watch-trailer-btn"
+                          onClick={() => {
+                            if (movies.trailer_link) {
+                              window.open(movies.trailer_link, "_blank");
+                            } else {
+                              alert("Trailer not available");
+                            }
+                          }}
+                        >
+                          <FaPlay className="play-icon" />
+                          Watch Trailer
+                        </button>
                 <div className="banner-overlay" />
               </div>
             </div>
@@ -106,6 +113,7 @@ const Moviedetail = () => {
             <p>{movies.Language}</p>
             <p>{movies.duration}</p>
             <p>{movies.Catogery}</p>
+            <p>{movies.year}</p>
             <p onClick={handlelike} style={{ cursor: "pointer" }}>
               {movies.likes}<FaHeart style={{ color: 'red' }} className='heart' />
             </p>
@@ -128,8 +136,8 @@ const Moviedetail = () => {
                       src={review.image || '/profile/default-profile.png'}
                       alt={review.name}
                       style={{
-                        width: '40px',
-                        height: '40px',
+                        width: '55px',
+                        height: '55px',
                         borderRadius: '50%',
                         objectFit: 'cover',
                         marginRight: '10px'
@@ -148,15 +156,16 @@ const Moviedetail = () => {
               <p>No reviews</p>
             )}
 
-            <p className='cre'><strong>Cast & Crew</strong></p>
-            <div className="cast-container">
-              {filenames.map((path, index) => (
-                <div key={index} style={{ textAlign: "center", margin: "10px" }}>
-                  <img className='actors' src={path} alt={`Actor ${index}`} />
-                  <div className='actorname'>{actornames[index]}</div>
+           <p className='cre'><strong>Cast & Crew</strong></p>
+                <div className="cast-container">
+                  {filenames.map((path, index) => (
+                    <div className="cast-member" key={index}>
+                      <img className='actors' src={path} alt={`Actor ${index}`} />
+                      <div className='actorname'>{actornames[index]}</div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+
 
             <p className="open-modal-btn">Your Review <FaPencilAlt size={20} color="#a38014" /></p>
 
@@ -191,6 +200,14 @@ const Moviedetail = () => {
       ) : (
         <p>Loading.....</p>
       )}
+      {/* footer */}
+      <div className='footer'>
+        <h2 className='footer-head'>CONTACT US</h2>
+      <div className='links'>
+        <a href="https://www.instagram.com/adheethi_?igsh=MThoc2pjaGcyYXN5cA=="><FaInstagram/></a>
+      <a href="https://www.linkedin.com/in/adheethiks?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FaLinkedin/></a>
+      </div>
+      </div>
     </div>
   );
 };

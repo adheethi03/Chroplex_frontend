@@ -1,21 +1,19 @@
-/* Modal Styles */
 .modal-overlay {
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  
   z-index: 999;
 }
 
 .modal-content {
-  
   padding: 2rem;
   width: 90%;
   max-width: 500px;
   position: relative;
   height: 20rem;
 }
+
 .open-modal-btn {
   margin-top: 1rem;
   padding: 8px 16px;
@@ -23,31 +21,29 @@
   border: none;
   border-radius: 5px;
   font-size: 2rem;
-  font-family: 'Orbitron',sans-serif;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .review-form textarea,
 .review-form input {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  border-radius: 4px;
-  border: none;
-  font-family: 'Orbitron',sans-serif;
- background-color: #000000;
- color:  #efbb1c;
- border-left: 1px solid rgba(255, 255, 255, 0.4); 
-  
   padding: 1rem;
+  margin-bottom: 16px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.03); 
-  box-shadow: 4px 4px 15px rgba(255, 255, 255, 0.1); 
+  border: none;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #000000;
+  color: #efbb1c;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 4px 4px 15px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease-in-out;
 }
-.review-form ::placeholder
-{
-    color: #efbb1c;
+
+.review-form ::placeholder {
+  color: #efbb1c;
 }
+
 .post-review {
   padding: 8px 16px;
   background-color: #a38014;
@@ -57,14 +53,15 @@
   cursor: pointer;
   width: 9rem;
   height: 3rem;
-  font-family: 'Orbitron',sans-serif;
+  font-family: 'Orbitron', sans-serif;
 }
-.movie-poster-image
-{
-    width: 20rem;
-    height:30rem;
-    margin-left: 3rem;
+
+.movie-poster-image {
+  width: 20rem;
+  height: 30rem;
+  margin-left: 3rem;
 }
+
 .movie-banner-container {
   width: 100%;
   height: 400px;
@@ -75,11 +72,11 @@
 
 .movie-banner {
   flex-grow: 1;
-  min-width: 500px; 
-   background-size: cover;
+  min-width: 500px;
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  position: relative; 
+  position: relative;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -92,46 +89,70 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.2); 
+  background: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-.p-b-image
-{
-    display: flex;
+
+.p-b-image {
+  display: flex;
 }
-@media screen and (max-width: 768px)
-{
-    .movie-poster-image
-    {
-        width: 100%;
+
+@media screen and (max-width: 768px) {
+  .movie-poster-image {
+    width: 100%;
     height: auto;
     margin-left: 0;
-    }
-     .movie-banner-container {
+  }
+
+  .movie-banner-container {
     height: 200px;
     max-width: 100%;
   }
-   .modal-content {
+
+  .modal-content {
     padding: 1rem;
     height: auto;
   }
+
+  .movie_desc,
+  .dire-wri {
+    font-size: 1.3rem !important;
+    padding-left: 0.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .small-det {
+    font-size: 1.02rem !important;
+  }
+
+  .watch-trailer-btn {
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border-radius: 40px;
+    gap: 6px;
+  }
+
+  .play-icon {
+    font-size: 0.9rem;
+    padding: 4px;
+  }
 }
-.small-det
-{
-    display: flex;
-    font-size: 20px;
-    align-items: flex-start;
-    
-    
+
+.small-det {
+  display: flex;
+  font-size: 20px;
+  align-items: flex-start;
 }
-.small-det *
-{
-    font-size: inherit;
-    margin-left:2rem ;
+
+.small-det * {
+  font-size: inherit;
+  margin-left: 2rem;
 }
-.movie-desc
-{
-    font-family: 'Orbitron', sans-serif;
+
+.movie_desc {
+  font-family: 'Orbitron', sans-serif;
   color: #efbb1c;
   font-size: 30px;
   line-height: 1.7;
@@ -142,66 +163,64 @@
   border-left: 3px solid #efbb1c;
   border-radius: 8px;
   margin: 2rem auto;
-  margin-left: 4rem
-  ;
+  margin-left: 4rem;
   max-width: 100rem;
   box-shadow: 0 0 10px #efbb1c33;
   transition: transform 0.3s ease;
 }
-.dire-wri
-{
+
+.dire-wri {
   font-size: 1.5rem;
   text-align: left;
 }
-.dire-wri *
-{
+
+.dire-wri * {
   font-size: inherit;
   text-align: left;
   margin-left: 2rem;
   color: #efbb1c;
 }
-.rev
-{
+
+.rev {
   display: flex;
   margin-left: 7rem;
-  
-  
 }
-.rev *
-{
-  margin-right:2rem ;
+
+.rev * {
+  margin-right: 2rem;
   padding-bottom: 2rem;
   font-size: 20px;
+  text-align: left;
 }
 
-.profile-pic
-{
+.profile-pic {
   margin-left: 4rem;
 }
-.review-name
-{
-  font-size: 15px;
-}
-.review-pan
-{
-  display: flex;
 
+.review-name {
+  font-size: 15px;
+  margin-left: 1rem;
 }
+
+.review-pan {
+  display: flex;
+}
+
 .review-card {
-  border-left: 1px solid rgba(255, 255, 255, 0.4); 
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
   margin-left: 4rem;
   padding: 1rem;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.03); /* Light transparent background */
-  box-shadow: 4px 4px 15px rgba(255, 255, 255, 0.1); /* Subtle white glow */
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 4px 4px 15px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease-in-out;
 }
 
 .review-card:hover {
-  box-shadow: 6px 6px 20px rgba(255, 255, 255, 0.15); /* Slightly more intense on hover */
+  box-shadow: 6px 6px 20px rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
 }
-/* Container to position the button relative to banner */
+
 .banner-container-relative {
   position: relative;
 }
@@ -238,31 +257,80 @@
   padding: 5px;
   background-color: white;
 }
-.actors
-{
-  border-radius: 50%;
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  margin-left: 9rem;
-}
-.cast-container
-{
+
+.cast-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10rem;
+  margin-top: 2rem;
 }
-.actorname
-{
-  margin-top: 8px;
-   color:#a38014;
-   font-size: 1.5rem;
-   font-family: 'Orbitron', sans-serif;
-   margin-left: 9rem;
-   padding: 1rem;
+
+.cast-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  margin-bottom: 2rem;
 }
-.dark .open-modal-btn
-{
+
+.actors {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.actorname {
+  margin-top: 10px;
+  color: #a38014;
+  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  padding: 0.5rem;
+  margin-left: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .cast-member {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .actors {
+    max-width: 150px;
+  }
+
+  .actorname {
+    font-size: 1rem;
+  }
+
+  .watch-trailer-btn {
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    border-radius: 40px;
+    gap: 6px;
+    z-index: 1000;
+  }
+
+  .play-icon {
+    font-size: 0.85rem;
+    padding: 4px;
+  }
+}
+
+.logout {
+  color: gold;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dark .open-modal-btn {
   color: #7a0707;
 }
+
 .dark .review-name,
 .dark .dire-wri *,
 .dark .rev *,
@@ -270,35 +338,75 @@
 .dark .actorname,
 .dark .small-det *,
 .dark .review-form textarea::placeholder,
-.dark .review-form input::placeholder
-{
+.dark .review-form input::placeholder,
+.dark .logout,
+.dark .footer-head,
+.dark .links a {
   color: #7a0707;
 }
+
+.dark .footer {
+  background-color: #fcd9a2;
+}
+
 .dark .review-form textarea,
-.dark .review-form input
-{
+.dark .review-form input {
   color: #7a0707;
-  border-left: 1px solid #7a0707; 
-  
+  border-left: 1px solid #7a0707;
   padding: 1rem;
   border-radius: 10px;
-  background: rgba(250, 166, 166, 0.03); 
-  box-shadow: 4px 4px 15px rgba(86, 2, 2, 0.1); 
+  background: rgba(250, 166, 166, 0.03);
+  box-shadow: 4px 4px 15px rgba(86, 2, 2, 0.1);
   transition: all 0.3s ease-in-out;
 }
-.dark .review-card 
-{
-   border-left: 1px solid #7a0707; 
-  
+
+.dark .review-card {
+  border-left: 1px solid #7a0707;
   padding: 1rem;
   border-radius: 10px;
-  background: #edd3a9; 
-  box-shadow: 4px 4px 15px rgba(86, 2, 2, 0.1); 
+  background: #edd3a9;
+  box-shadow: 4px 4px 15px rgba(86, 2, 2, 0.1);
   transition: all 0.3s ease-in-out;
 }
-.dark .post-review
-{
+
+.dark .post-review {
   background-color: #7a0707;
   color: #fcd9a2;
 }
 
+.footer {
+  border-top: 1px solid #a38014;
+  margin: 2rem 0 0 0;
+  padding: 2rem 1rem 1rem 1rem;
+  background-color: #111;
+  text-align: center;
+  box-shadow: 0 -2px 10px rgba(255, 215, 0, 0.1);
+}
+
+.footer-head {
+  color: #f5c518;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.links a {
+  color: #f5c518;
+  font-size: 28px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.links a:hover {
+  transform: scale(1.2);
+  color: #fff;
+}

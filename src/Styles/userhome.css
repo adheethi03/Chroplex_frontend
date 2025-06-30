@@ -6,7 +6,7 @@ body {
   
 }
 
-/* ✅ Updated: Align carousel at the top center */
+
 .carousel-center { 
   display: flex; 
   justify-content: center; 
@@ -15,7 +15,7 @@ body {
   padding-bottom: 30px; 
   box-sizing: border-box; 
   background-color: #000000; 
-  flex-wrap: wrap; /* helps items wrap properly on smaller screens */
+  flex-wrap: wrap; 
 }
 
 .carousel {
@@ -102,3 +102,21 @@ body {
   background-color: #c89c16;
   color: rgb(247, 242, 242);
 }
+.navb
+{
+ display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px; 
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.navb h1,
+.navb h2,
+.navb .search-btn,
+.navb .logout-icon {
+  flex: 1 1 auto;
+  min-width: fit-content;
+  margin: 6px;
+}
+

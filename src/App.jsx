@@ -23,6 +23,7 @@ function App() {
         <Route path='/view_users' element={<ViewUsers/>}/>
         <Route path='/add_movie' element={<AddMovie/>}/>
         <Route path="/movies/:title"  element={<Moviedetail/>}/>
+        <Route path='/user/logout' element={<Login/>}/>
       </Routes>
     </Router>
     </div>
