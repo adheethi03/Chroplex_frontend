@@ -16,7 +16,7 @@ function AddMovie() {
     description: '',
     trailer_link: '',
   });
-
+  const api_url="https://movie-review-authetication.onrender.com/"
   const [imageFile, setImageFile] = useState(null); //img handle
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -44,7 +44,7 @@ function AddMovie() {
     }
 
     try {
-      const res = await axios.post("http://localhost:3000/adm/admin/movies", formData, {
+      const res = await axios.post(`${api_url}adm/admin/movies`, formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         },

@@ -9,7 +9,7 @@ const Login = () => {
   const navigate=useNavigate()
     const[formData,setFormData]=useState({email:"",password:"",role:""})
     const[error,seterror]=useState("")
-  
+    const api_url="https://movie-review-authetication.onrender.com/"
   const handlechange=(e)=>
   {
     setFormData({...formData,[e.target.name]:e.target.value})
@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault()
     try{
       
-      const res=await axios.post("http://localhost:3000/api/login",formData,
+      const res=await axios.post(`${api_url}api/login`,formData,
         {
           withCredentials:true
         } )

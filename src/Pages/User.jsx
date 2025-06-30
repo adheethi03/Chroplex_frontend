@@ -11,7 +11,7 @@ function User() {
   const [error, setError] = useState("");
   const [darkMode, setDarkMode] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-
+  const api_url="https://movie-review-authetication.onrender.com/"
   const navigate = useNavigate();
 
   const handleposterclick = (movie) => {
@@ -51,7 +51,7 @@ function User() {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/adm/admin/movies/show");
+        const res = await axios.get(`${api_url}adm/admin/movies/show`);
         const moviesArray = res.data.movies;
 
         const uniqueTitles = new Set();

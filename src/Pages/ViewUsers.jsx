@@ -6,11 +6,11 @@ import { FaTrashAlt } from 'react-icons/fa';
 const ViewUsers = () => {
   const [pdata, setData] = useState([]);
   const [error, setError] = useState("");
-
+  const api_url="https://movie-review-authetication.onrender.com/"
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/adm/admin/userslist");
+        const res = await axios.get(`${api_url}adm/admin/userslist`);
         console.log(res.data);
         setData(res.data.Users);
         // localStorage.setItem('username',res.data.name)
@@ -24,7 +24,7 @@ const ViewUsers = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/adm/admin/user/${id}`);
+      await axios.delete(`${api_url}adm/admin/user/${id}`);
       setData(pdata.filter(user => user._id !== id));
     } catch (error) {
       console.error("Error deleting user:", error);

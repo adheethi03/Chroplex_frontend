@@ -8,11 +8,11 @@ const Admin = () => {
   const navigate = useNavigate();
   const [dmovies, setMovies] = useState([]);
   const [error, setError] = useState(null);
-  
+  const api_url="https://movie-review-authetication.onrender.com/"
   useEffect(() => {
     const fetchmovies = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/adm/admin/movies/show");
+        const res = await axios.get(`${api_url}adm/admin/movies/show`);
         
         const moviesArray = res.data.movies;
 
@@ -36,7 +36,7 @@ const handledlt=async(title)=>
 {
   try {
     console.log("before:",dmovies)
-    const dltdata=await axios.delete(`http://localhost:3000/adm/admin/movies/${title}`)
+    const dltdata=await axios.delete(`${api_url}adm/admin/movies/${title}`)
     console.log(dltdata.data)
     setMovies(dmovies.filter(movie=>movie.title!==title))
     console.log("after",dmovies)
@@ -45,23 +45,7 @@ const handledlt=async(title)=>
     
   }
 }
-// //searching a movie
-// const handlechange=(e)=>
-// {
-//   setsearch(e.target.value)
-// }
-// const handleSubmit=async(e)=>
-// {
-//   e.preventDefault()
-//   const title=searchname
-//   try {
-//     const smovie=await axios.get(`http://localhost:3000/adm/admin/movies/show/${title}`)
-//     console.log(smovie.data.movies)
-//     setMovies(smovie.data.movies)
-//   } catch (error) {
-//     setError(`Failed to search: ${error.message}`);
-//   }
-// }
+
   return (
     <div>
       {/* Navbar */}

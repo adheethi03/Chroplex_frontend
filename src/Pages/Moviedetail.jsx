@@ -17,11 +17,11 @@ const Moviedetail = () => {
   const toggleDarkMode = () => {
     setDarkMode(prevMode => !prevMode);
   };
-
+  const api_url="https://movie-review-authetication.onrender.com/"
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/usr/user/${title}`);
+        const res = await axios.get(`${api_url}usr/user/${title}`);
         setMovies(res.data.movies);
       } catch (err) {
         setError('Failed to fetch details: ' + err.message);
@@ -31,14 +31,14 @@ const Moviedetail = () => {
   }, [title]);
 
   const handlelike = async () => {
-    await axios.post(`http://localhost:3000/usr/user/movies/like/${title}`);
+    await axios.post(`${api_url}usr/user/movies/like/${title}`);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const userid = JSON.parse(localStorage.getItem('userid'));
-      await axios.post(`http://localhost:3000/usr/user/movie/review/${title}`, {
+      await axios.post(`${api_url}usr/user/movie/review/${title}`, {
         userid: userid,
         comment: review.Comment,
         rating: review.rating,
@@ -49,7 +49,7 @@ const Moviedetail = () => {
       setSuccess('Review posted successfully!');
       setError('');
 
-      const res = await axios.get(`http://localhost:3000/usr/user/${title}`);
+      const res = await axios.get(`${api_url}usr/user/${title}`);
       setMovies(res.data.movies);
     } catch (err) {
       setError('Failed to post review: ' + err.message);
