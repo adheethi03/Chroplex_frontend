@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../Styles/addmovie.css'
+import {FaArrowLeft } from 'react-icons/fa';
 
 function AddMovie() {
   const [moviedata, setMovieData] = useState({
@@ -63,6 +64,11 @@ function AddMovie() {
 
   return (
     <div>
+      <FaArrowLeft
+            
+            onClick={() => navigate(-1)}
+            className="arrow"
+            title="Go Back"/>
       <h1 className='heading-title'>CHROPLEX</h1>
       <h3 className='subheading'>ADD NEW MOVIE</h3>
       <h2>ADD NEW MOVIE</h2>

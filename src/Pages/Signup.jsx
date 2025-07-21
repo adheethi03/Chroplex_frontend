@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../Styles/Login.css';
 import { useNavigate } from 'react-router-dom';
+import {FaArrowLeft } from 'react-icons/fa';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +16,7 @@ const Signup = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const api_url = "https://movie-review-authetication.onrender.com/";
+  const api_url = "https:/ /movie-review-authetication.onrender.com/";
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -65,6 +66,11 @@ const Signup = () => {
 
   return (
     <div className='container'>
+      <FaArrowLeft
+            
+            onClick={() => navigate(-1)}
+            className="arrow"
+            title="Go Back"/>
       <h1 className='title'>CHROPLEX</h1>
       <form onSubmit={handleSubmit} className='form-display'>
         <input

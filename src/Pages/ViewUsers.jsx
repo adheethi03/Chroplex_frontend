@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../Styles/viewusers.css';
 import axios from 'axios';
-import { FaTrashAlt } from 'react-icons/fa';
+import { FaTrashAlt,FaArrowLeft } from 'react-icons/fa';
 
 const ViewUsers = () => {
   const [pdata, setData] = useState([]);
@@ -34,8 +34,15 @@ const ViewUsers = () => {
 
   return (
     <div>
+      <FaArrowLeft
+            
+            onClick={() => navigate(-1)}
+            className="arrow"
+            title="Go Back"/>
       <h1 className='heading-title'>CHROPLEX</h1>
       <h2 className='subheading'>USER - WHO HAVE ACCOUNT</h2>
+      
+       
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
       <div className='all-in-list'>
@@ -48,10 +55,10 @@ const ViewUsers = () => {
                 <p className='userdata'>Role: {user.role}</p>
               </div>
               <div className='trash-icon-container'>
-                <button className='trash-icon' onClick={() => handleDelete(user._id)}>
+                <button className='trash-icon' onClick={() => handleDelete(user._id)} title='Delete or restrict the user'>
                   <FaTrashAlt />
                 </button>
-                <span className='info'>This will delete/restrict the user</span>
+               
               </div>
             </div>
           ))}

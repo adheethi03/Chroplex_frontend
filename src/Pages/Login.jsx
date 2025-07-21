@@ -2,8 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import '../Styles/Login.css'
-
+import {FaArrowLeft} from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
+import { div } from 'framer-motion/client'
 const Login = () => {
  
   const navigate=useNavigate()
@@ -48,7 +49,27 @@ const Login = () => {
 }
   
   return (
+    
     <div className='container'>
+      <div
+  style={{
+    position: 'absolute',
+    top: '50px',
+    left: '50px',
+    zIndex: 1000
+  }}
+>
+  <FaArrowLeft
+    style={{
+      color: 'gold',
+      fontSize: '24px',
+      cursor: 'pointer'
+    }}
+    onClick={() => navigate(-1)}
+    title="Go Back"
+  />
+</div>
+
       <h1 className='title'>CHROPLEX</h1>
       <form onSubmit={handleSubmit} className='form-display'>
         <input type="email" name="email" placeholder='Email' onChange={handlechange} required className='input-display'/>

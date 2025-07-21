@@ -61,7 +61,13 @@
   height: 30rem;
   margin-left: 3rem;
 }
-
+.arrow
+{
+   color: gold;
+   font-size: 24px;
+     cursor: pointer;
+    margin-right: 15px;
+}
 .movie-banner-container {
   width: 100%;
   height: 400px;
@@ -341,12 +347,18 @@
 .dark .review-form input::placeholder,
 .dark .logout,
 .dark .footer-head,
-.dark .links a {
+.dark .links a,
+.dark .arrow,
+.dark .heading-title {
   color: #7a0707;
 }
 
 .dark .footer {
   background-color: #fcd9a2;
+}
+.dark .movie_desc
+{
+  border-left: 3px solid #7a0707;
 }
 
 .dark .review-form textarea,

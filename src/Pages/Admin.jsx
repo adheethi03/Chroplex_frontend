@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../Styles/admin.css';
 import { useNavigate } from 'react-router-dom';
-import { FaTrashAlt, FaUser, FaSearch, FaPlus } from 'react-icons/fa';
+import { FaTrashAlt, FaUser, FaSearch, FaPlus} from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -49,13 +50,17 @@ const handledlt=async(title)=>
   return (
     <div>
       {/* Navbar */}
+      <FaArrowLeft
+            
+            onClick={() => navigate(-1)}
+            className="arrow"
+            title="Go Back"/>
       <div className='navbar'>
         <h1 className='heading-title'>CHROPLEX</h1>
         <h2 className='subheading'>Welcome admin!</h2>
         <div className='nav'>
           
-             <button className='search-btn' type='submit'>  <input type="text" placeholder='Search' className='to-search'/><FaSearch className='search-icon'/></button>
-         
+            
         
           <button className='nav-btns' onClick={() => navigate('/view_users')}>
             <FaUser className='user-icon' /> View Users
@@ -75,7 +80,7 @@ const handledlt=async(title)=>
             <h3 className='movie_title'>{movie.title}</h3>
             <p className='movie_genre'>
               {movie.genre}
-              <button className='trash-btn' onClick={() => handledlt(movie.title)}>
+              <button className='trash-btn' onClick={() => handledlt(movie.title)} title='delete the movie from the list'>
                 <FaTrashAlt className='trash-ico' />
               </button>
             </p>

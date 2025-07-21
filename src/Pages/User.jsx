@@ -3,18 +3,18 @@ import { useNavigate } from "react-router-dom";
 import { Carousel } from 'react-bootstrap';
 import '../Styles/userhome.css';
 import axios from 'axios';
-import { FaSignOutAlt, FaSearch } from 'react-icons/fa';
-import { FaInstagram,FaLinkedin } from 'react-icons/fa';
+import { FaSignOutAlt, FaSearch, FaInstagram, FaLinkedin, FaArrowLeft,FaSun,FaMoon } from 'react-icons/fa';
+
 function User() {
   const [movies, setMovies] = useState([]);
   const [groupedMovies, setGroupedMovies] = useState({});
   const [error, setError] = useState("");
   const [darkMode, setDarkMode] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const api_url="https://movie-review-authetication.onrender.com/"
+  const api_url = "https://movie-review-authetication.onrender.com/";
   const navigate = useNavigate();
 
-  const handleposterclick = (movie) => {
+  const handlePosterClick = (movie) => {
     const etitle = encodeURIComponent(movie.title);
     navigate(`/movies/${etitle}`);
   };
@@ -37,7 +37,6 @@ function User() {
   };
 
   useEffect(() => {
-   
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';
@@ -83,19 +82,28 @@ function User() {
 
   return (
     <div className={`container-fluid ${darkMode ? 'dark' : ''}`} style={{ padding: 30 }}>
-      <div className="theme-toggle">
-        <button onClick={toggleDarkMode} className="toggle-btn">
-          {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-        </button>
-      </div>
+     <div className="theme-toggle">
+  <button onClick={toggleDarkMode} className="toggle-btn">
+    {darkMode ?  <FaMoon />:<FaSun /> }
+  </button>
+</div>
 
       <div className="navb">
-        <FaSignOutAlt
-          style={{ color: 'gold', fontSize: '24px', cursor: 'pointer' }}
-          onClick={() => navigate("/user/logout")}
-        />
+        <div className="nav-icons">
+          <FaArrowLeft
+            
+            onClick={() => navigate(-1)}
+            className="arrow1"
+            title="Go Back"
+          />
+          <FaSignOutAlt
+            onClick={() => navigate("/user/logout")}
+            className="signout"
+            title="Logout"
+          />
+        </div>
         <h1 className='heading-title'>CHROPLEX</h1>
-        <h2 className="subheading">WELCOME USER</h2>
+        
 
         <form
           className='search-form'
@@ -146,7 +154,7 @@ function User() {
                   <img
                     src={movie.movie_image}
                     alt={movie.title}
-                    onClick={() => handleposterclick(movie)}
+                    onClick={() => handlePosterClick(movie)}
                     style={{ cursor: 'pointer' }}
                     className='movie_poster'
                   />
@@ -158,15 +166,16 @@ function User() {
           </div>
         ))}
       </div>
-       {/* footer */}
-            <div className='footer'>
-              <h2 className='footer-head'>CONTACT US</h2>
-            <div className='links'>
-              <a href="https://www.instagram.com/adheethi_?igsh=MThoc2pjaGcyYXN5cA=="><FaInstagram/></a>
-            <a href="https://www.linkedin.com/in/adheethiks?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FaLinkedin/></a>
-            </div>
-            </div>
-          </div>
+
+      {/* Footer */}
+      <div className='footer'>
+        <h2 className='footer-head'>CONTACT US</h2>
+        <div className='links'>
+          <a href="https://www.instagram.com/adheethi_?igsh=MThoc2pjaGcyYXN5cA=="><FaInstagram /></a>
+          <a href="https://www.linkedin.com/in/adheethiks?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FaLinkedin /></a>
+        </div>
+      </div>
+    </div>
   );
 }
 

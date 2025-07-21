@@ -77,30 +77,49 @@ body {
 .dark .genre-heading {
   color: #7a0707;
 }
-
-
-
+.arrow1
+{
+   color: gold;
+   font-size: 24px;
+     cursor: pointer;
+    margin-right: 15px;
+}
+.signout
+{
+  color: gold;
+  font-size: 24px;
+  cursor: pointer; 
+}
 .dark .movie_title,
 .dark .movie_genre,
-.dark .movie_desc {
+.dark .movie_desc ,
+.dark .arrow,
+.dark .signout,
+.dark .subheading{
   color: #7a0707;
 }
-
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .toggle-btn {
-  background-color: #7a0707;
-  border: 2px solid black;
-  color:  #fbe8c9;
+  background-color: #000000;
+  border: none;
+  color: gold;
   padding: 5px 15px;
-  border-radius: 5px;
+  font-size: 30px;
   float: right;
- font-family: 'Orbitron', sans-serif;
   margin-right: 20px;
   cursor: pointer;
 }
 
 .toggle-btn:hover {
-  background-color: #c89c16;
-  color: rgb(247, 242, 242);
+  color: #c89c16;
+  animation: rotate360 0.6s linear; /* 👈 Spin effect */
 }
 .navb
 {
@@ -128,4 +147,19 @@ body {
   width: 34px;
   height: 34px;
 
+}
+.dark .navb .search-btn,
+.dark .to-search
+{
+  
+  background-color: #7a0707;
+}
+.dark .to-search::placeholder,
+.dark .search-icon
+{
+  color: white;
+}
+.dark .toggle-btn {
+  background-color: #fde3b8;
+  color: #7a0707;
 }

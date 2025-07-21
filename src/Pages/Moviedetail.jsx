@@ -4,7 +4,7 @@ import axios from 'axios';
 import "../Styles/moviedetails.css";
 import { FaHeart, FaPlay, FaPencilAlt } from 'react-icons/fa';
 import { FaSignOutAlt } from 'react-icons/fa'
-import { FaInstagram,FaLinkedin } from 'react-icons/fa';
+import { FaInstagram,FaLinkedin,FaArrowLeft,FaSun,FaMoon } from 'react-icons/fa';
 
 const Moviedetail = () => {
   const { title } = useParams();
@@ -71,10 +71,15 @@ const Moviedetail = () => {
   return (
 
     <div className={`container-fluid ${darkMode ? 'dark' : 'light'}`} style={{ padding: 30 }}>
-      <button className="toggle-btn" onClick={toggleDarkMode}>
-        {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-      </button>
-      <FaSignOutAlt  className="logout" onClick={()=>navigate("/user/logout")}/>
+      <button onClick={toggleDarkMode} className="toggle-btn">
+          {darkMode ?  <FaMoon />:<FaSun /> }
+        </button>
+     <FaArrowLeft
+                 
+                 onClick={() => navigate(-1)}
+                 className="arrow"
+                 title="Go Back"
+               />
       {movies ? (
         <>
           <h1 className="heading-title">CHROPLEX</h1>
