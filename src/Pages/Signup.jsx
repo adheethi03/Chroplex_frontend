@@ -3,7 +3,9 @@ import axios from 'axios';
 import '../Styles/Login.css';
 import { useNavigate } from 'react-router-dom';
 import {FaArrowLeft } from 'react-icons/fa';
-
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import { FaCheckCircle } from "react-icons/fa";
 const Signup = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,7 +18,7 @@ const Signup = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const api_url = "https:/ /movie-review-authetication.onrender.com/";
+  const api_url = "https://movie-review-authetication.onrender.com/";
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -57,8 +59,10 @@ const Signup = () => {
         withCredentials: true
       });
 
-      alert("Signup successful!");
-      navigate("/user/logout"); // or redirect to login or home
+    toast.success("Sign up succesfull!", {
+        icon: <FaCheckCircle color="#efbb1c" size={20} />
+      });
+      navigate("/user/logout"); 
     } catch (error) {
       setError(error.response?.data?.message || "Account creation failed");
     }
@@ -129,6 +133,7 @@ const Signup = () => {
 
         <button type='submit' className='btn'>Sign up</button>
       </form>
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };

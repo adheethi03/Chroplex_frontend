@@ -9,6 +9,7 @@ import User from './Pages/User.jsx';
 import ViewUsers from './Pages/ViewUsers.jsx';
 import AddMovie from './Pages/AddMovie.jsx';
 import Moviedetail from './Pages/Moviedetail.jsx';
+
 function App() {
   return (
     <div>
@@ -24,6 +25,7 @@ function App() {
         <Route path='/add_movie' element={<AddMovie/>}/>
         <Route path="/movies/:title"  element={<Moviedetail/>}/>
         <Route path='/user/logout' element={<Login/>}/>
+  
       </Routes>
     </Router>
     </div>

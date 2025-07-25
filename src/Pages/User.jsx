@@ -103,7 +103,7 @@ function User() {
           />
         </div>
         <h1 className='heading-title'>CHROPLEX</h1>
-        
+        {/* search */}
 
         <form
           className='search-form'
@@ -171,7 +171,7 @@ function User() {
       <div className='footer'>
         <h2 className='footer-head'>CONTACT US</h2>
         <div className='links'>
-          <a href="https://www.instagram.com/adheethi_?igsh=MThoc2pjaGcyYXN5cA=="><FaInstagram /></a>
+          <a href="https://www.instagram.com/chroplex?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><FaInstagram /></a>
           <a href="https://www.linkedin.com/in/adheethiks?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FaLinkedin /></a>
         </div>
       </div>

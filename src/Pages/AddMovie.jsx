@@ -71,7 +71,7 @@ function AddMovie() {
             title="Go Back"/>
       <h1 className='heading-title'>CHROPLEX</h1>
       <h3 className='subheading'>ADD NEW MOVIE</h3>
-      <h2>ADD NEW MOVIE</h2>
+      
 
       <form onSubmit={handleSubmit} className="add-movie-form" encType="multipart/form-data">
         <div className='form-row'>

@@ -4,7 +4,7 @@ import axios from 'axios'
 import '../Styles/Login.css'
 import {FaArrowLeft} from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
-import { div } from 'framer-motion/client'
+
 const Login = () => {
  
   const navigate=useNavigate()

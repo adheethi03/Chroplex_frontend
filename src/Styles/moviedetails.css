@@ -422,3 +422,16 @@
   transform: scale(1.2);
   color: #fff;
 }
+.Toastify__toast--success {
+  background: #000000 !important;
+  color: #efbb1c !important;
+}
+
+.Toastify__toast--error {
+  background: #8b1e1e !important;
+  color: #fff !important;
+}
+
+.Toastify__progress-bar {
+  background: gold !important;
+}

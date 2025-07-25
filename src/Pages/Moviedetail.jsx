@@ -3,9 +3,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import "../Styles/moviedetails.css";
 import { FaHeart, FaPlay, FaPencilAlt } from 'react-icons/fa';
-import { FaSignOutAlt } from 'react-icons/fa'
 import { FaInstagram,FaLinkedin,FaArrowLeft,FaSun,FaMoon } from 'react-icons/fa';
-
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import { FaCheckCircle } from "react-icons/fa";
 const Moviedetail = () => {
   const { title } = useParams();
   const [movies, setMovies] = useState(null);
@@ -44,9 +45,13 @@ const Moviedetail = () => {
         rating: review.rating,
       });
 
-      alert('Review posted successfully');
+
+
+      toast.success("Review added successfully!", {
+        icon: <FaCheckCircle color="#efbb1c" size={20} />
+      });
+
       setReview({ Comment: '', rating: '' });
-      setSuccess('Review posted successfully!');
       setError('');
 
       const res = await axios.get(`${api_url}usr/user/${title}`);
@@ -173,7 +178,7 @@ const Moviedetail = () => {
 
 
             <p className="open-modal-btn">Your Review <FaPencilAlt size={20} color="#a38014" /></p>
-
+                  {/* review section */}
             <div className="modal-overlay">
               <div className="modal-content">
                 <form onSubmit={handleSubmit} className="review-form">
@@ -209,10 +214,11 @@ const Moviedetail = () => {
       <div className='footer'>
         <h2 className='footer-head'>CONTACT US</h2>
       <div className='links'>
-        <a href="https://www.instagram.com/adheethi_?igsh=MThoc2pjaGcyYXN5cA=="><FaInstagram/></a>
+        <a href="https://www.instagram.com/chroplex?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><FaInstagram/></a>
       <a href="https://www.linkedin.com/in/adheethiks?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FaLinkedin/></a>
       </div>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };

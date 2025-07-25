@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../Styles/admin.css';
 import { useNavigate } from 'react-router-dom';
-import { FaTrashAlt, FaUser, FaSearch, FaPlus} from 'react-icons/fa';
+import { FaTrashAlt, FaUser,FaPlus,FaInstagram, FaLinkedin,FaSignOutAlt} from 'react-icons/fa';
 import { FaArrowLeft } from 'react-icons/fa';
 
 const Admin = () => {
@@ -10,6 +10,7 @@ const Admin = () => {
   const [dmovies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const api_url="https://movie-review-authetication.onrender.com/"
+  
   useEffect(() => {
     const fetchmovies = async () => {
       try {
@@ -55,6 +56,11 @@ const handledlt=async(title)=>
             onClick={() => navigate(-1)}
             className="arrow"
             title="Go Back"/>
+             <FaSignOutAlt
+                        onClick={() => navigate("/user/logout")}
+                        className="signout2"
+                        title="Logout"
+                      />
       <div className='navbar'>
         <h1 className='heading-title'>CHROPLEX</h1>
         <h2 className='subheading'>Welcome admin!</h2>
@@ -76,7 +82,10 @@ const handledlt=async(title)=>
         {error && <p style={{ color: "red" }}>{error}</p>}
         {dmovies.map((movie) => (
           <div key={movie._id} className="movie-card">
-            <img src={movie.movie_image} alt={movie.title} className='movie_poster' />
+           <img
+                    src={movie.movie_image}
+                    alt={movie.title}
+                   className='movie_poster' />
             <h3 className='movie_title'>{movie.title}</h3>
             <p className='movie_genre'>
               {movie.genre}
@@ -91,9 +100,16 @@ const handledlt=async(title)=>
         ))}
       </div>
       
-
+        <div className='footer'>
+                <h2 className='footer-head'>CONTACT US</h2>
+                <div className='links'>
+                  <a href="https://www.instagram.com/chroplex?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><FaInstagram /></a>
+                  <a href="https://www.linkedin.com/in/adheethiks?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FaLinkedin /></a>
+                </div>
+              </div>
 
     </div>
+    
   );
 };
 
